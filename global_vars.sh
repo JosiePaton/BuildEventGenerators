@@ -1,29 +1,29 @@
 #!/bin/bash
 
-export gpvm=${HOSTNAME}
-export suffix=".fnal.gov"
-export prefix="gpvm"
-export hostgpvm=${gpvm%"$suffix"}
-hostgpvm=$(printf '%s\n' "${hostgpvm//[[:digit:]]/}")
-hostgpvm=${hostgpvm%"$prefix"}
+#export gpvm=${HOSTNAME}
+#export suffix=".fnal.gov"
+#export prefix="gpvm"
+#export hostgpvm=${gpvm%"$suffix"}
+#hostgpvm=$(printf '%s\n' "${hostgpvm//[[:digit:]]/}")
+#hostgpvm=${hostgpvm%"$prefix"}
 
 # MicroBooNE
-if [[ "${hostgpvm}" == "uboone" ]] 
-then 
-	source /cvmfs/uboone.opensciencegrid.org/products/setup_uboone_mcc9.sh
-fi
+#if [[ "${hostgpvm}" == "uboone" ]] 
+#then 
+#	source /cvmfs/uboone.opensciencegrid.org/products/setup_uboone_mcc9.sh
+#fi
 
 # SBND
-if [[ "${hostgpvm}" == "sbnd" ]] 
-then 
-	source /cvmfs/sbnd.opensciencegrid.org/products/sbnd/setup_sbnd.sh
-fi
+#if [[ "${hostgpvm}" == "sbnd" ]] 
+#then 
+source /cvmfs/sbnd.opensciencegrid.org/products/sbnd/setup_sbnd.sh
+#fi
 
 #DUNE
-if [[ "${hostgpvm}" == "dune" ]] 
-then 
-	source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
-fi
+#if [[ "${hostgpvm}" == "dune" ]] 
+#then 
+#	source /cvmfs/dune.opensciencegrid.org/products/dune/setup_dune.sh
+#fi
 
 setup root v6_28_12 -q e26:p3915:prof                      
 setup lhapdf v6_5_4 -q e26:p3915:prof                                           
