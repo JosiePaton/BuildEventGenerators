@@ -2,8 +2,8 @@
 
 export events="100"
 export version="v3_4_2"
-export tune="AR23_20i_00_000"
-export probe="14"
+export tune="G18_10a_02_11a"
+export probe="-14"
 export target="1000180400"
 export interaction="CC"
 export minE="0."
@@ -13,7 +13,7 @@ export fluxhisto="hEnumu_cv"
 export outdir="./samples"
 
 # Produce the GENIE splines
-#gmkspl -p ${probe} -t ${target} -e ${maxE} -o ${outdir}/${probe}_${target}_${interaction}_${version}_${tune}.xml --tune ${tune} --event-generator-list ${interaction}
+gmkspl -p ${probe} -t ${target} -e ${maxE} -o ${outdir}/${probe}_${target}_${interaction}_${version}_${tune}.xml --tune ${tune} --event-generator-list ${interaction}
 
 # Convert the xml splines to root format
 gspl2root -f ${outdir}/${probe}_${target}_${interaction}_${version}_${tune}.xml --event-generator-list ${interaction} -p ${probe} -t ${target} -o ${outdir}/${probe}_${target}_${interaction}_${version}_${tune}.xml.root --tune ${tune}
