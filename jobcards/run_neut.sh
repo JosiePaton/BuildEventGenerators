@@ -8,7 +8,14 @@
 ## Then run the commands below
 
 cd ../neut_container/interactive
-singularity exec nuisance_nuint2024.sif /bin/bash run_neut_container.sh
+
+## for some reason this command is not working for neut
+#singularity exec nuisance_nuint2024.sif /bin/bash run_neut_container.sh
+
+/cvmfs/oasis.opensciencegrid.org/mis/apptainer/current/bin/apptainer exec nuisance_nuint2024.sif /bin/bash -x run_neut_container.sh
+
+cd -
+mv ../neut_container/interactive/NEUT.flat.root samples/
 
 ##############################################################
 
